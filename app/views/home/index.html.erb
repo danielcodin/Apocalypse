@@ -1,0 +1,52 @@
+<div id="view" style="display:block;">
+
+	<div class="tutorial" style="display:block;">
+		<img src="MAIN_logo.png" width="750px" height="250px">
+		<p style="text-align:center;">Step One</p> 
+	</div>
+	<div class ="tutorial" style="display:none;">
+		<img src="MAIN_logo.png" width=750px" height="250px">
+		<p style="text-align:center;">Step Two</p>
+	</div>
+	<div class ="tutorial" style="display:none;">
+                <img src="MAIN_logo.png" width=750px" height="250px">
+                <p style="text-align:center;">Step Three</p>
+		<button class="end" onClick="endTutorial()">Begin Shopping</button>
+        </div>
+	
+	<a class="prev" onClick="plusSlides(-1)"><</a>
+	<a class="next" onClick="plusSlides(1)">></a>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("tutorial");
+	if (n > slides.length) { slideIndex = 1 }
+	if (n < 1) { slideIndex = slides.length } ;
+	for (i=0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	slides[slideIndex-1].style.display = "block";
+}
+
+function endTutorial() {
+	var slides = document.getElementsByClassName("tutorial");
+	slides[2].style.display = "none";
+	
+}
+
+
+</script>
+
