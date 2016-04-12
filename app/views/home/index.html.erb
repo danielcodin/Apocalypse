@@ -1,15 +1,23 @@
 <%= render 'pano' %>
+<%= render :partial => 'popup', :locals => {
+    :popupid => "armyknife",
+    :imagelink => "/items/armyknife.png",
+    :iframe => "/Shoes_output/Shoes.html"
+    } %>
+
 
 <div class="tutorial">
 	<img src="POPUP.png" height=523px>
 </div>
 
-<div class="end" onClick="endTutorial()"></div>
-	
+<div class="end" onClick="endTutorial();"></div>
+
 
 <script>
 
 function endTutorial() {
+	alert(1);
+	window.location = "/Hackathon.html";
 	var tutorial = document.getElementsByClassName("tutorial");
 	var end = document.getElementsByClassName("end");
 	tutorial[0].style.display = "none";
@@ -19,4 +27,3 @@ function endTutorial() {
 
 
 </script>
-
